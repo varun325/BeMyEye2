@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "786968125001",
+    "firebase_url": "https://bemyeye2.firebaseio.com",
+    "project_id": "bemyeye2",
+    "storage_bucket": "bemyeye2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:786968125001:android:afe2694af4bbb6d7",
+        "android_client_info": {
+          "package_name": "com.example.bemyeye2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "786968125001-n9t1npb4d5kshspdndncpb2d4d6vru82.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.bemyeye2",
+            "certificate_hash": "bf24e1696cf34bce73eaa417affdefa86595cfde"
+          }
+        },
+        {
+          "client_id": "786968125001-du6un3r3c5s1n836loeiq2b10abvje0o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9yBAgdqpsK0t6aKa7LgeNkVO-Jykb3pU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "786968125001-du6un3r3c5s1n836loeiq2b10abvje0o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
