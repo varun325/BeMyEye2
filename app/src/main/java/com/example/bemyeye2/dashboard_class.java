@@ -29,6 +29,17 @@ public class dashboard_class extends AppCompatActivity {
                 startActivity(intent4);
             }
         });
+
+
+
+        Button btn5=(Button)findViewById(R.id.upload1);
+        btn5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent5=new Intent(dashboard_class.this,uploadactivity.class);
+                startActivity(intent5);
+            }
+        });
     }
 
     @Override
