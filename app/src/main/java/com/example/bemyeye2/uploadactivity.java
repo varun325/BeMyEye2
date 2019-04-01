@@ -17,7 +17,13 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -34,6 +40,9 @@ public class uploadactivity extends AppCompatActivity {
     private StorageReference mStorageRef;
     private ProgressDialog mProgress;
     private boolean flag=false;
+    private DatabaseReference myRef;
+    private long lectureNo;
+    private String lecno="0";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -46,6 +55,8 @@ public class uploadactivity extends AppCompatActivity {
         mStorageRef = FirebaseStorage.getInstance().getReference();
 
         mProgress= new ProgressDialog(this);
+        myRef = FirebaseDatabase.getInstance().getReference();
+
 
         Button btn8=(Button)findViewById(R.id.uploadbutton);
         btn8.setOnClickListener(new View.OnClickListener() {
@@ -76,7 +87,8 @@ public class uploadactivity extends AppCompatActivity {
                     mRecordlabel.setText("Uploading Audio");
                     //mProgress.setMessage("Uploading Audio");
                     //mProgress.show();
-                    String userUid = FirebaseAuth.getInstance().getCurrentUser().getEmail();
+                    final String userUid = FirebaseAuth.getInstance().getCurrentUser().getEmail();
+                    final String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
                     StorageReference filepath = mStorageRef.child("Audio").child(userUid).child(fileName);
 
@@ -88,8 +100,47 @@ public class uploadactivity extends AppCompatActivity {
                                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                                     // Get a URL to the uploaded content
                                    // Uri downloadUrl = taskSnapshot.getDownloadUrl().getResult();
-                                    //mProgress.dismiss();
-                                    mRecordlabel.setText("upload complete");
+                                    Task<Uri> downloadUrl= taskSnapshot.getMetadata().getReference().getDownloadUrl();
+
+
+                                    //code to keep a track of the lecture numbers.
+
+                                    myRef.child("users").addChildEventListener(new ChildEventListener() {
+                                        @Override
+                                        public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+
+                                           lectureNo= dataSnapshot.getChildrenCount();
+                                           lecno=String.valueOf(lectureNo);
+
+                                         //  lectureNo=(String) dataSnapshot.getChildrenCount();
+                                            Log.d(dataSnapshot.getKey(),lecno + "");
+                                        }
+
+                                        @Override
+                                        public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+                                        }
+
+                                        @Override
+                                        public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+                                        }
+
+                                        @Override
+                                        public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+                                        }
+
+                                        @Override
+                                        public void onCancelled(DatabaseError databaseError) {
+
+                                        }
+                                    });
+
+                            myRef.child("users").child(uid).child("Lecture"+lecno).setValue(downloadUrl.toString()); //saves the url of the image on the real time data base
+                            //mProgress.dismiss();
+                            mRecordlabel.setText("upload complete");
+
                                 }
                             })
                             .addOnFailureListener(new OnFailureListener() {
