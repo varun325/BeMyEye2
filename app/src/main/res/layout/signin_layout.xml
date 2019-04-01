@@ -61,6 +61,7 @@
                 android:id="@+id/Signin2"
                 android:textSize="40dp"
                 android:paddingBottom="70dp"
+                android:textColor="#CFBC85"
                 android:paddingTop="70dp"
                 android:drawableBottom= "@drawable/ic_check_circle_black_48dp"
                 android:theme="@style/PrimaryRaisedButton"/>
@@ -73,6 +74,7 @@
                 android:id="@+id/back1"
                 android:textSize="40dp"
                 android:paddingBottom="70dp"
+                android:textColor="#CFBC85"
                 android:paddingTop="70dp"
                 android:drawableBottom="@drawable/ic_exit_to_app_black_48dp"
                 android:theme="@style/PrimaryRaisedButton1"/>

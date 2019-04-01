@@ -74,6 +74,7 @@
                 android:textSize="40dp"
                 android:id="@+id/Signup2"
                 android:paddingBottom="20dp"
+                android:textColor="#CFBC85"
                 android:drawableBottom="@drawable/ic_check_circle_black_48dp"
                 android:theme="@style/PrimaryRaisedButton"/>
             <Button
@@ -82,6 +83,7 @@
                 android:layout_weight="1"
                 android:text="Back"
                 android:id="@+id/back2"
+                android:textColor="#CFBC85"
                 android:textSize="40dp"
                 android:paddingBottom="20dp"
                 android:drawableBottom="@drawable/ic_exit_to_app_black_48dp"
