@@ -58,6 +58,7 @@ public class uploadactivity extends AppCompatActivity {
         myRef = FirebaseDatabase.getInstance().getReference();
 
 
+
         Button btn8=(Button)findViewById(R.id.uploadbutton);
         btn8.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,6 +69,38 @@ public class uploadactivity extends AppCompatActivity {
                 fileName+="/"+filename2+".3gp";
                 Log.d("filename",fileName);
                 startRecording();
+                myRef.child("users").addChildEventListener(new ChildEventListener() {
+                    @Override
+                    public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+
+                        lectureNo= dataSnapshot.getChildrenCount();
+                        lectureNo+=1;
+                        lecno=String.valueOf(lectureNo);
+
+                        //  lectureNo=(String) dataSnapshot.getChildrenCount();
+                        Log.d(dataSnapshot.getKey(),lecno + "");
+                    }
+
+                    @Override
+                    public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+                    }
+
+                    @Override
+                    public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+                    }
+
+                    @Override
+                    public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
                 mRecordlabel.setText("recording now......");
             }
         });
@@ -105,39 +138,10 @@ public class uploadactivity extends AppCompatActivity {
 
                                     //code to keep a track of the lecture numbers.
 
-                                    myRef.child("users").addChildEventListener(new ChildEventListener() {
-                                        @Override
-                                        public void onChildAdded(DataSnapshot dataSnapshot, String s) {
 
-                                           lectureNo= dataSnapshot.getChildrenCount();
-                                           lecno=String.valueOf(lectureNo);
 
-                                         //  lectureNo=(String) dataSnapshot.getChildrenCount();
-                                            Log.d(dataSnapshot.getKey(),lecno + "");
-                                        }
-
-                                        @Override
-                                        public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
-                                        }
-
-                                        @Override
-                                        public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-                                        }
-
-                                        @Override
-                                        public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
-                                        }
-
-                                        @Override
-                                        public void onCancelled(DatabaseError databaseError) {
-
-                                        }
-                                    });
-
-                            myRef.child("users").child(uid).child("Lecture"+lecno).setValue(downloadUrl.toString()); //saves the url of the image on the real time data base
+                            myRef.child("users").child(uid).child("Lecture"+lecno).setValue(downloadUrl.toString());
+                           //saves the url of the image on the real time data base
                             //mProgress.dismiss();
                             mRecordlabel.setText("upload complete");
 
