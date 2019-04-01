@@ -21,6 +21,12 @@
             android:id="@+id/Signin3"
             android:text="SIGN IN"
             android:textSize="48dp"
+            android:paddingLeft="50dp"
+            android:paddingRight="20dp"
+            android:fontFamily="sans-serif"
+            android:drawableLeft="@drawable/ic_check_circle_black_48dp"
+            android:theme="@style/PrimaryRaisedButton"
+
             />
         <Button
             android:layout_width="match_parent"
@@ -29,6 +35,10 @@
             android:text="SIGN UP"
             android:textSize="48dp"
             android:id="@+id/Signup3"
-            />
+            android:paddingLeft="50dp"
+            android:paddingRight="20dp"
+            android:fontFamily="sans-serif"
+            android:drawableLeft="@drawable/ic_face_black_48dp"
+            android:theme="@style/PrimaryRaisedButton1"/>
     </LinearLayout>
 </RelativeLayout>

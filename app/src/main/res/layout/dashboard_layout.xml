@@ -14,8 +14,12 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:text="UPLOAD LECTURES"
+            android:fontFamily="sans-serif"
             android:id="@+id/upload1"
             android:textSize="35dp"
+            android:paddingBottom="40dp"
+            android:drawableBottom="@drawable/ic_note_add_black_48dp"
+            android:theme="@style/PrimaryRaisedButton"
             ></Button>
         <Button
             android:layout_width="0dp"
@@ -23,14 +27,22 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:text="PLAYLISTS"
-            android:textSize="35dp"></Button>
+            android:textSize="35dp"
+            android:fontFamily="sans-serif"
+            android:paddingBottom="40dp"
+            android:drawableBottom="@drawable/ic_book_black_48dp"
+            android:theme="@style/PrimaryRaisedButton1"></Button>
         <Button
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:text="SEARCH"
-            android:textSize="35dp"></Button>
+            android:textSize="35dp"
+            android:paddingBottom="40dp"
+            android:fontFamily="sans-serif"
+            android:drawableBottom="@drawable/ic_find_in_page_black_48dp"
+            android:theme="@style/PrimaryRaisedButton1"></Button>
         <Button
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -38,7 +50,11 @@
             android:layout_columnWeight="1"
             android:text="SIGN OUT"
             android:id="@+id/signout"
-            android:textSize="35dp"></Button>
+            android:textSize="35dp"
+            android:fontFamily="sans-serif"
+            android:paddingBottom="40dp"
+            android:drawableBottom="@drawable/ic_exit_to_app_black_48dp"
+            android:theme="@style/PrimaryRaisedButton2"></Button>
     </GridLayout>
 
 

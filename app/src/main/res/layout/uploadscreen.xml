@@ -11,8 +11,12 @@
             android:layout_height="0dp"
             android:layout_weight="1.5"
             android:id="@+id/uploadbutton"
+            android:fontFamily="sans-serif"
+            android:drawableBottom="@drawable/ic_backup_black_48dp"
             android:text="Press to start recording"
-            android:textSize="40dp"/>
+            android:textSize="40dp"
+
+            android:theme="@style/PrimaryRaisedButton"/>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -21,6 +25,7 @@
             android:textAlignment="center"
             android:paddingTop="25dp"
             android:textSize="30dp"
+            android:fontFamily="sans-serif"
             android:hint="Enter the name of the Lecture here"/>
         <TextView
             android:layout_width="match_parent"
@@ -35,9 +40,12 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1.5"
+            android:fontFamily="sans-serif"
             android:text="Press to stop recording"
             android:textSize="40dp"
-            android:id="@+id/stopbutton"/>
+            android:id="@+id/stopbutton"
+            android:drawableBottom="@drawable/ic_highlight_off_black_48dp"
+            android:theme="@style/PrimaryRaisedButton2"/>
 
 
     </LinearLayout>
