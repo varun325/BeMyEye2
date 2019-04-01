@@ -11,7 +11,7 @@
             android:layout_height="0dp"
             android:layout_weight="1.5"
             android:id="@+id/uploadbutton"
-            android:textColor="#CFBC85"
+            android:textColor="#dfe6e9"
             android:fontFamily="sans-serif"
             android:drawableBottom="@drawable/ic_backup_black_48dp"
             android:text="Press to start recording"

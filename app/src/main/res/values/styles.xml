@@ -3,8 +3,8 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">#ACEB98</item>
-        <item name="colorPrimaryDark">#6bb660</item>
+        <item name="colorPrimary">#81ecec</item>
+        <item name="colorPrimaryDark">#00cec9</item>
         <item name="colorAccent">#2A2B2E</item>
     </style>
 
@@ -12,18 +12,18 @@
     <style name="PrimaryRaisedButton" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:buttonStyle">@style/Widget.AppCompat.Button.Colored</item>
         <item name="colorControlHighlight">#5A5A66</item>
-        <item name="colorAccent">#6bb660</item>
+        <item name="colorAccent">#00cec9</item>
     </style>
 
     <style name="PrimaryRaisedButton1" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:buttonStyle">@style/Widget.AppCompat.Button.Colored</item>
         <item name="colorControlHighlight">#5A5A66</item>
-        <item name="colorAccent">#ACEB98</item>
+        <item name="colorAccent">#81ecec</item>
     </style>
 
     <style name="PrimaryRaisedButton2" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:buttonStyle">@style/Widget.AppCompat.Button.Colored</item>
         <item name="colorControlHighlight">#5A5A66</item>
-        <item name="colorAccent">#e17055</item>
+        <item name="colorAccent">#ffeaa7</item>
     </style>
 </resources>

@@ -21,11 +21,11 @@
             android:id="@+id/Signin3"
             android:text="SIGN IN"
             android:textSize="48dp"
-            android:textColor="#CFBC85"
+            android:textColor="#dfe6e9"
             android:paddingLeft="50dp"
             android:paddingRight="20dp"
             android:fontFamily="sans-serif"
-            android:drawableLeft="@drawable/ic_check_circle_black_48dp"
+            android:drawableLeft="@drawable/ic_done_all_black_48dp"
             android:theme="@style/PrimaryRaisedButton"
 
             />
@@ -41,6 +41,6 @@
             android:paddingRight="20dp"
             android:fontFamily="sans-serif"
             android:drawableLeft="@drawable/ic_face_black_48dp"
-            android:theme="@style/PrimaryRaisedButton1"/>
+            android:theme="@style/PrimaryRaisedButton2"/>
     </LinearLayout>
 </RelativeLayout>
