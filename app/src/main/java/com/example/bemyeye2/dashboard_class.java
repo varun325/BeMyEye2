@@ -4,6 +4,7 @@ package com.example.bemyeye2;
         import android.os.Bundle;
         import android.support.annotation.Nullable;
         import android.support.v7.app.AppCompatActivity;
+        import android.util.Log;
         import android.view.View;
         import android.widget.Button;
         import android.widget.Toast;
@@ -30,6 +31,17 @@ public class dashboard_class extends AppCompatActivity {
             }
         });
 
+
+
+        Button btn10=(Button) findViewById(R.id.Search);
+        btn10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("btn10","button pressed search");
+                Intent intent10=new Intent(dashboard_class.this,search.class);
+                startActivity(intent10);
+            }
+        });
 
 
         Button btn5=(Button)findViewById(R.id.upload1);

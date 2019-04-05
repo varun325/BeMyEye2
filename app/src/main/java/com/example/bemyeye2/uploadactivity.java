@@ -1,6 +1,7 @@
 package com.example.bemyeye2;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.media.MediaRecorder;
 import android.net.Uri;
 import android.os.Bundle;
@@ -27,6 +28,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import java.util.Calendar;
 
 import java.io.File;
 import java.io.IOException;
@@ -43,6 +45,7 @@ public class uploadactivity extends AppCompatActivity {
     private DatabaseReference myRef;
     private long lectureNo;
     private String lecno="0";
+    private String filename2;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -56,16 +59,13 @@ public class uploadactivity extends AppCompatActivity {
 
         mProgress= new ProgressDialog(this);
         myRef = FirebaseDatabase.getInstance().getReference();
-
-
-
         Button btn8=(Button)findViewById(R.id.uploadbutton);
         btn8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 flag=true;
                 fileName= Environment.getExternalStorageDirectory().getAbsolutePath();
-                String filename2=mRecord.getText().toString();
+                filename2=mRecord.getText().toString();
                 fileName+="/"+filename2+".3gp";
                 Log.d("filename",fileName);
                 startRecording();
@@ -140,7 +140,10 @@ public class uploadactivity extends AppCompatActivity {
 
 
 
-                            myRef.child("users").child(uid).child("Lecture"+lecno).setValue(downloadUrl.toString());
+                        //    myRef.child("users").child(uid).child("Lecture"+lecno).setValue(downloadUrl.toString());
+                                    myRef.child("users").child(Calendar.getInstance().getTime().toString()).child("Lecture").setValue(downloadUrl.toString());
+                                    myRef.child("users").child(Calendar.getInstance().getTime().toString()).child("LectureName").setValue(filename2);
+
                            //saves the url of the image on the real time data base
                             //mProgress.dismiss();
                             mRecordlabel.setText("upload complete");

@@ -3,7 +3,7 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">#81ecec</item>
+        <item name="colorPrimary">#1B9CFC</item>
         <item name="colorPrimaryDark">#00cec9</item>
         <item name="colorAccent">#2A2B2E</item>
     </style>
@@ -18,7 +18,7 @@
     <style name="PrimaryRaisedButton1" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:buttonStyle">@style/Widget.AppCompat.Button.Colored</item>
         <item name="colorControlHighlight">#5A5A66</item>
-        <item name="colorAccent">#81ecec</item>
+        <item name="colorAccent">#1B9CFC</item>
     </style>
 
     <style name="PrimaryRaisedButton2" parent="Theme.AppCompat.Light.NoActionBar">

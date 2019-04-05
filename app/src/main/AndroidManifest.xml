@@ -23,6 +23,8 @@
         <activity android:name=".signupclass"></activity>
         <activity android:name=".dashboard_class"></activity>
         <activity android:name=".uploadactivity"></activity>
+        <activity android:name=".search"></activity>
+        <activity android:name=".homepage"></activity>
     </application>
 
 </manifest>
