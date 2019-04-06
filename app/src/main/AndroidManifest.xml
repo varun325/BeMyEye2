@@ -25,6 +25,7 @@
         <activity android:name=".uploadactivity"></activity>
         <activity android:name=".search"></activity>
         <activity android:name=".homepage"></activity>
+        <activity android:name=".Playeractivity"></activity>
     </application>
 
 </manifest>

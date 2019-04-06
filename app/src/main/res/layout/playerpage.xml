@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/playerLayout"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:id="@+id/Play1"
+            android:text="Play"
+            android:textSize="48dp"
+            android:textColor="#dfe6e9"
+            android:paddingLeft="50dp"
+            android:paddingRight="20dp"
+            android:fontFamily="sans-serif"
+            android:drawableLeft="@drawable/ic_done_all_black_48dp"
+            android:theme="@style/PrimaryRaisedButton"
+
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:id="@+id/Pause1"
+            android:text="Pause"
+            android:textSize="48dp"
+            android:textColor="#dfe6e9"
+            android:paddingLeft="50dp"
+            android:paddingRight="20dp"
+            android:fontFamily="sans-serif"
+            android:drawableLeft="@drawable/ic_done_all_black_48dp"
+            android:theme="@style/PrimaryRaisedButton"
+
+            />
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="STOP"
+            android:textSize="48dp"
+            android:id="@+id/Signup3"
+            android:paddingLeft="50dp"
+            android:textColor="#CFBC85"
+            android:paddingRight="20dp"
+            android:fontFamily="sans-serif"
+            android:drawableLeft="@drawable/ic_face_black_48dp"
+            android:theme="@style/PrimaryRaisedButton2"/>
+    </LinearLayout>
+
+
+</RelativeLayout>

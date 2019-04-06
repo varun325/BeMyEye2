@@ -66,7 +66,7 @@ public class uploadactivity extends AppCompatActivity {
                 flag=true;
                 fileName= Environment.getExternalStorageDirectory().getAbsolutePath();
                 filename2=mRecord.getText().toString();
-                fileName+="/"+filename2+".3gp";
+                fileName+="/"+filename2+".mp3";
                 Log.d("filename",fileName);
                 startRecording();
                 myRef.child("users").addChildEventListener(new ChildEventListener() {
@@ -109,7 +109,7 @@ public class uploadactivity extends AppCompatActivity {
         btn9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(fileName==".3gp"||flag==false){
+                if(fileName==".mp3"||flag==false){
                     Toast.makeText(uploadactivity.this, "Nothing recorded", Toast.LENGTH_SHORT).show();
                 }else{
                     flag=false;
@@ -133,15 +133,21 @@ public class uploadactivity extends AppCompatActivity {
                                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                                     // Get a URL to the uploaded content
                                    // Uri downloadUrl = taskSnapshot.getDownloadUrl().getResult();
-                                    Task<Uri> downloadUrl= taskSnapshot.getMetadata().getReference().getDownloadUrl();
+                                 //   Task<Uri> downloadUrl= taskSnapshot.getMetadata().getReference().getDownloadUrl();
+                                    Task downloadUrl= taskSnapshot.getStorage().getDownloadUrl();
 
+                                    while(!downloadUrl.isSuccessful()){
 
+                                    }
+                                    String string2=String.valueOf((Object)(Uri)downloadUrl.getResult());
+
+                                    Log.d("url",string2);
                                     //code to keep a track of the lecture numbers.
 
 
 
                         //    myRef.child("users").child(uid).child("Lecture"+lecno).setValue(downloadUrl.toString());
-                                    myRef.child("users").child(Calendar.getInstance().getTime().toString()).child("Lecture").setValue(downloadUrl.toString());
+                                    myRef.child("users").child(Calendar.getInstance().getTime().toString()).child("Lecture").setValue(string2);
                                     myRef.child("users").child(Calendar.getInstance().getTime().toString()).child("LectureName").setValue(filename2);
 
                            //saves the url of the image on the real time data base

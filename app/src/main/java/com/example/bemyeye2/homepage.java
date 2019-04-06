@@ -1,6 +1,7 @@
 package com.example.bemyeye2;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -30,6 +31,7 @@ public class homepage extends AppCompatActivity {
     private ArrayList<String> files;
     private ArrayList<String> fileu;
     private ListView listView;
+    private MediaPlayer mediaPlayer;
    /* public static String getFileNameFromUrl(String url) {
 
         String urlString = url;
@@ -80,6 +82,10 @@ public class homepage extends AppCompatActivity {
                                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                                      Log.d("url-clicked",fileu.get(position));
+                                    // mediaPlayer.setDataSource(fileu.get(position));
+                                    Intent i= new Intent(homepage.this,Playeractivity.class);
+                                    i.putExtra("FILE_URL",user.Lecture);
+                                    startActivity(i);
                                     //Intent i = new Intent(getActivity(), DiscussAddValu.class);
                                    // startActivity(i);
                                 }
