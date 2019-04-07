@@ -17,14 +17,14 @@ public class search extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.search);
-        mAuth = FirebaseAuth.getInstance();
+        mAuth = FirebaseAuth.getInstance();//assign a value to the firebase instance
 
-        Button btn9=(Button) findViewById(R.id.search3);
+        Button btn9=(Button) findViewById(R.id.search3);//link the button for homepage
         btn9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent9=new Intent(search.this,homepage.class);
-                startActivity(intent9);
+                Intent intent9=new Intent(search.this,homepage.class); //create an instance to the homepage activity
+                startActivity(intent9);//start new activity
             }
         });
 
@@ -34,13 +34,13 @@ public class search extends AppCompatActivity {
     public void onStart() {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseUser currentUser = mAuth.getCurrentUser();
+        FirebaseUser currentUser = mAuth.getCurrentUser();//get the data of the current user on the startup
         updateUI(currentUser);
     }
 
     private void updateUI(FirebaseUser currentUser) {
         if(currentUser!=null){
-            Toast.makeText(this, "authenticated", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "authenticated", Toast.LENGTH_SHORT).show();//release a toast is the user is not null
         }
     }
 }

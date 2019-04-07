@@ -23,17 +23,17 @@ public class signinclass extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.signin_layout);
-        mAuth = FirebaseAuth.getInstance();
-        Button btn2= (Button) findViewById(R.id.back1);
+        mAuth = FirebaseAuth.getInstance();//create an instance of the firebase auth
+        Button btn2= (Button) findViewById(R.id.back1);//link the back button
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent2= new Intent(signinclass.this,MainActivity.class);
-                startActivity(intent2);
+                Intent intent2= new Intent(signinclass.this,MainActivity.class);//create  an intent to the main activity
+                startActivity(intent2);//start next activity
             }
         });
 
-        Button btn5=(Button) findViewById(R.id.Signin2);
+        Button btn5=(Button) findViewById(R.id.Signin2);//link teh sign in activity
         btn5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,7 +42,7 @@ public class signinclass extends AppCompatActivity {
                 String email=siusername.getText().toString();
                 String password=sipassword.getText().toString();
 
-                mAuth.signInWithEmailAndPassword(email, password)
+                mAuth.signInWithEmailAndPassword(email, password)//sign in with the given email and password on the firebase server
                         .addOnCompleteListener(signinclass.this, new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -51,13 +51,13 @@ public class signinclass extends AppCompatActivity {
                                     Log.d("signin" ,"signInWithEmail:success");
                                     FirebaseUser user = mAuth.getCurrentUser();
                                     updateUI(user);
-                                    Intent intent6 =new Intent(signinclass.this,dashboard_class.class);
-                                    startActivity(intent6);
+                                    Intent intent6 =new Intent(signinclass.this,dashboard_class.class);//create and intent for the dash board activity
+                                    startActivity(intent6);//start next activity
                                 } else {
                                     // If sign in fails, display a message to the user.
                                     Log.w("signin", "signInWithEmail:failure", task.getException());
                                     Toast.makeText(signinclass.this, "Authentication failed.",
-                                            Toast.LENGTH_SHORT).show();
+                                            Toast.LENGTH_SHORT).show();//create a toast if the authentication fails
                                     updateUI(null);
                                 }
 
@@ -81,9 +81,9 @@ public class signinclass extends AppCompatActivity {
     private void updateUI(FirebaseUser currentUser) {
 
         if(currentUser!=null){
-            Toast.makeText(this, "Signed in ,redirecting to dashboard", Toast.LENGTH_SHORT).show();
-            Intent intent7= new Intent(signinclass.this,dashboard_class.class);
-            startActivity(intent7);
+            Toast.makeText(this, "Signed in ,redirecting to dashboard", Toast.LENGTH_SHORT).show();//create a toast if the user is already signed in
+            Intent intent7= new Intent(signinclass.this,dashboard_class.class);//pass an intent to the dashboard if the user is already logged in
+            startActivity(intent7);//start next activity
         }
     }
 }

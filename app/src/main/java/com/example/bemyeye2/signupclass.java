@@ -34,13 +34,13 @@ public class signupclass extends AppCompatActivity {
 
 
 
-        Button btn3= (Button) findViewById(R.id.back2);
-        Button btn5=(Button)findViewById(R.id.Signup2);
+        Button btn3= (Button) findViewById(R.id.back2);//link the back button
+        Button btn5=(Button)findViewById(R.id.Signup2);//link the sign up button
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent2= new Intent(signupclass.this,MainActivity.class);
-                startActivity(intent2);
+                Intent intent2= new Intent(signupclass.this,MainActivity.class);//create an intent for the mainctivity
+                startActivity(intent2);//start new activity
             }
         });
 
@@ -57,7 +57,7 @@ public class signupclass extends AppCompatActivity {
                 //password="varun1234@";
 
                 if(email!=""&&email!=null&&password!=""&&password!=null){
-                    mAuth.createUserWithEmailAndPassword(email, password)
+                    mAuth.createUserWithEmailAndPassword(email, password)//create the user with the email and password that was added into edit texts
                             .addOnCompleteListener(signupclass.this, new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
@@ -66,13 +66,13 @@ public class signupclass extends AppCompatActivity {
                                         Log.d("signup", "createUserWithEmail:success");
                                         FirebaseUser user = mAuth.getCurrentUser();
                                         updateUI(user);
-                                        Intent intent5=new Intent(signupclass.this,dashboard_class.class);
-                                        startActivity(intent5);
+                                        Intent intent5=new Intent(signupclass.this,dashboard_class.class);//create and intent to the dashboard activity
+                                        startActivity(intent5);//start the new activity
 
                                     } else {
                                         // If sign in fails, display a message to the user.
                                         Log.w("signup", "createUserWithEmail:failure", task.getException());
-                                        Toast.makeText(signupclass.this, "Authentication failed.",
+                                        Toast.makeText(signupclass.this, "Authentication failed.",//create a toast if the authentication fails
                                                 Toast.LENGTH_SHORT).show();
                                         updateUI(null);
                                     }
@@ -105,7 +105,7 @@ public class signupclass extends AppCompatActivity {
 
         if(currentUser!=null){
             Toast.makeText(this, "Signed in ,redirecting to dashboard", Toast.LENGTH_SHORT).show();
-            Intent intent7= new Intent(signupclass.this,dashboard_class.class);
+            Intent intent7= new Intent(signupclass.this,dashboard_class.class);//if the user is already signed in we move to the dash board activity
             startActivity(intent7);
         }
     }
